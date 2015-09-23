@@ -1,6 +1,10 @@
 package com.webapp.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -19,9 +23,22 @@ public class AjaxController {
 	Gson gson = new Gson();
 	
 	@RequestMapping(value="/member", method=RequestMethod.POST)
-	public void test(HttpServletRequest request) {
+	public void test(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		response.setContentType("application/json; charset=utf-8");
+		PrintWriter writer = response.getWriter();
 		
-		log.info("test()...");
+		
+		String id = request.getParameter("id");
+		
+		if (id.equals("김구")) {
+			
+			writer.println(gson.toJson("사용가능한 아이디"));
+		} else {
+			writer.println(gson.toJson("중복된 아이디"));
+		}
+		
+		
+		log.info("test()..." + id);
 	}
 	
 }

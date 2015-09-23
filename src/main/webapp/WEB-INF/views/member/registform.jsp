@@ -21,6 +21,40 @@
 <script type="text/javascript">
 
 
+$(function() {
+// 	$('#email').blur(function() {
+// // 		var username = $('.username').val();
+// // 		var sendData = 'username=' + username;
+		
+// 		$.post(
+// 			"ajax/member",
+// 			function() {
+// 				alert("zz");
+// 			}
+// 		)
+// 		return false;
+// 	});
+
+	$("#email").blur(function(){
+	    var id = $('#email').val();
+	    $.ajax({
+	    type: "POST",
+	    url: "ajax/member", //이페이지에서 중복체크를 한다
+	    data: "id="+ id ,//test.asp에 id 값을 보낸다
+	    cache: false,
+	    success: function(data){
+	        $("#loadtext").html(data); //해당 내용을 보여준다
+	    }
+	    });
+	});
+
+
+});
+
+
+
+
+
 </script>
 </head>
 <body>
@@ -30,6 +64,7 @@
 
 <form:form commandName="regist" action="regist" method="post" cssClass="w3-container w3-center">
 
+	<div id="loadtext"></div>
 	<!-- email -->
 	<div class="w3-group">
 		<form:input path="email" cssClass="w3-input" required="required"/>
