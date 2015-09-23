@@ -11,6 +11,12 @@
 		max-width: 250px;
 		margin: auto auto;
 	}
+	
+	div[id$='errors'] {
+		color: red;
+	}
+	
+	
 </style>
 </head>
 <body>
@@ -18,20 +24,22 @@
 
 <form:form commandName="login" action="login" method="post" cssClass="w3-container w3-center">
 
-<div class="w3-group">
-<form:input path="email" cssClass="w3-input" required="required"/>
-<!-- <input type="text" class="w3-input" required="required"> -->
-<label class="w3-label">email</label>
-</div>
+	<!-- email -->
+	<div class="w3-group">
+		<form:input path="email" cssClass="w3-input" required="required"/>
+		<label class="w3-label">email</label>
+	</div>
+	
+	<!-- password -->
+	<div class="w3-group">
+		<form:password path="password" cssClass="w3-input" required="required"/>
+		<label class="w3-label">password</label>
+	</div>
 
-<div class="w3-group">
-<form:password path="password" cssClass="w3-input" required="required"/>
-<!-- <input type="text" class="w3-input" required="required"> -->
-<label class="w3-label">password</label>
-</div>
-
-<input type="submit" value="login" class="w3-btn w3-light-grey">
-
+	<!-- login 버튼 -->
+	<input type="submit" value="login" class="w3-btn w3-light-grey">
+	
+	<form:errors cssClass="w3-margin" element="div"/>
 
 </form:form>
 
