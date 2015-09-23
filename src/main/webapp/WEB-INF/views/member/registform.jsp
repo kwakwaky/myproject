@@ -22,18 +22,6 @@
 
 
 $(function() {
-// 	$('#email').blur(function() {
-// // 		var username = $('.username').val();
-// // 		var sendData = 'username=' + username;
-		
-// 		$.post(
-// 			"ajax/member",
-// 			function() {
-// 				alert("zz");
-// 			}
-// 		)
-// 		return false;
-// 	});
 
 	$("#email").blur(function(){
 	    var id = $('#email').val();
@@ -48,7 +36,6 @@ $(function() {
 	    });
 	});
 
-
 });
 
 
@@ -59,8 +46,6 @@ $(function() {
 </head>
 <body>
 <h1>Regist Form</h1>
-
-<button id="ajax">ajaxtest</button>
 
 <form:form commandName="regist" action="regist" method="post" cssClass="w3-container w3-center">
 
