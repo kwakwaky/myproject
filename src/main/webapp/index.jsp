@@ -19,21 +19,9 @@
 </script>
 </head>
 <body>
-<h1 class="w3-red">WellCome!</h1>
+<h1>WellCome!</h1>
 
-<form action="">
 
-<div class="w3-group">
-<input type="text" class="w3-input" required="required">
-<label class="w3-label">email</label>
-</div>
-
-<div class="w3-group">
-<input type="text" class="w3-input" required="required">
-<label for="password" class="w3-label">password</label>
-</div>
-
-</form>
 
 </body>
 </html>

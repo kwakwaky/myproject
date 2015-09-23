@@ -50,8 +50,8 @@
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>
-				classpath:spring/mvc/beans_controller.xml
 				classpath:spring/mvc/beans_mvc.xml
+				classpath:spring/mvc/beans_controller.xml
 			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
@@ -62,5 +62,6 @@
 		<servlet-name>springDispatcherServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	
 
 </web-app>

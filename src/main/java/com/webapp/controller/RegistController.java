@@ -6,21 +6,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-
 @Controller
-public class LoginController {
+@RequestMapping("/regist")
+public class RegistController {
 	
-	static Log log = LogFactory.getLog(LoginController.class);
-	
-	@RequestMapping(value="/login", method=RequestMethod.GET)
-	public String loginForm() {
+	static Log log = LogFactory.getLog(RegistController.class);
+
+	@RequestMapping(method=RequestMethod.GET)
+	public String registForm() {
 		
-		log.info("loginForm()...");
+		log.info("registForm()...");
 		
-		return "member/loginform";
+		return "member/registform";
 	}
-	
-	
-	
 	
 }
