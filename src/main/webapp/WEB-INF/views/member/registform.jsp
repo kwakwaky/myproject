@@ -5,16 +5,28 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 <link rel="stylesheet" href="resources/w3.css">
+<link rel="stylesheet" href="resources/js/jquery-ui-1.11.4/jquery-ui.css">
+
+<script type="text/javascript" src="resources/js/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
+<script type="text/javascript" src="resources/js/jquery-ui-1.11.4/jquery-ui.js"></script>
+
 <style type="text/css">
 	form {
 		max-width: 250px;
 		margin: auto auto;
 	}
 </style>
+<script type="text/javascript">
+
+
+</script>
 </head>
 <body>
 <h1>Regist Form</h1>
+
+<button id="ajax">ajaxtest</button>
 
 <form:form commandName="regist" action="regist" method="post" cssClass="w3-container w3-center">
 
