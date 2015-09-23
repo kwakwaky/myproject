@@ -18,15 +18,16 @@
 
 <form:form commandName="login" action="login" method="post" cssClass="w3-container w3-center">
 
-<div class="w3-group w3-center">
+<div class="w3-group">
 <form:input path="email" cssClass="w3-input" required="required"/>
 <!-- <input type="text" class="w3-input" required="required"> -->
 <label class="w3-label">email</label>
 </div>
 
 <div class="w3-group">
-<input type="text" class="w3-input" required="required">
-<label for="password" class="w3-label">password</label>
+<form:password path="password" cssClass="w3-input" required="required"/>
+<!-- <input type="text" class="w3-input" required="required"> -->
+<label class="w3-label">password</label>
 </div>
 
 <input type="submit" value="login" class="w3-btn w3-light-grey">
