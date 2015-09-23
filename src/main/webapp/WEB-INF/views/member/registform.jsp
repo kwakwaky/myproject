@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,21 +16,62 @@
 <body>
 <h1>Regist Form</h1>
 
-<form action="" class="w3-container w3-center">
+<form:form commandName="regist" action="regist" method="post" cssClass="w3-container w3-center">
 
-<div class="w3-group w3-center">
-<input type="text" class="w3-input" required="required">
-<label class="w3-label">email</label>
-</div>
+	<!-- email -->
+	<div class="w3-group">
+		<form:input path="email" cssClass="w3-input" required="required"/>
+		<label class="w3-label">email</label>
+	</div>
+	
+	<!-- password -->
+	<div class="w3-group">
+		<form:password path="password" cssClass="w3-input" required="required"/>
+		<label class="w3-label">password</label>
+	</div>
+	
+	<!-- passwordCheck -->
+	<div class="w3-group">
+		<form:password path="password_check" cssClass="w3-input" required="required"/>
+		<label class="w3-label">passwordCheck</label>
+	</div>
+	
+	<!-- name -->
+	<div class="w3-group">
+		<form:input path="name" cssClass="w3-input" required="required"/>
+		<label class="w3-label">name</label>
+	</div>
+	
+	<!-- phone -->
+	<div class="w3-group">
+		<form:input path="phone" cssClass="w3-input" required="required"/>
+		<label class="w3-label">phone</label>
+	</div>
+	
+	<!-- gender -->
+	<div class="w3-group">
+		<form:input path="gender" cssClass="w3-input" required="required"/>
+		<label class="w3-label">gender</label>
+	</div>
+	
+	<!-- birth -->
+	<div class="w3-group">
+		<form:input path="birth" cssClass="w3-input" required="required"/>
+		<label class="w3-label">birth</label>
+	</div>
+	
+	<!-- choice -->
+	<div class="w3-group">
+		<form:input path="choice" cssClass="w3-input" required="required"/>
+		<label class="w3-label">choice</label>
+	</div>
 
-<div class="w3-group">
-<input type="text" class="w3-input" required="required">
-<label for="password" class="w3-label">password</label>
-</div>
+	<!-- regist 버튼 -->
+	<input type="submit" value="Regist" class="w3-btn w3-light-grey">
+	
+	<form:errors cssClass="w3-margin" element="div"/>
 
-<input type="submit" value="regist" class="w3-btn w3-light-grey">
-
-</form>
+</form:form>
 
 </body>
 </html>

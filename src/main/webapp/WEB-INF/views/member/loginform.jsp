@@ -37,7 +37,7 @@
 	</div>
 
 	<!-- login 버튼 -->
-	<input type="submit" value="login" class="w3-btn w3-light-grey">
+	<input type="submit" value="Login" class="w3-btn w3-light-grey">
 	
 	<form:errors cssClass="w3-margin" element="div"/>
 
