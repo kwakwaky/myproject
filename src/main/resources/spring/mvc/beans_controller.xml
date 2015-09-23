@@ -8,7 +8,4 @@
 <!-- 해당 package이하를 스캔해서 설정에맞는 data가 있으면 자동으로 bean등록 해줌-->
 <context:component-scan base-package="com.webapp"></context:component-scan>
 
-<!-- <bean class="com.webapp.controller.LoginController"/> -->
-
-
 </beans>

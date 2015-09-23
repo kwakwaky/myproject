@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,10 +16,11 @@
 <body>
 <h1>Login Form</h1>
 
-<form action="" class="w3-container w3-center">
+<form:form commandName="login" action="login" method="post" cssClass="w3-container w3-center">
 
 <div class="w3-group w3-center">
-<input type="text" class="w3-input" required="required">
+<form:input path="email" cssClass="w3-input" required="required"/>
+<!-- <input type="text" class="w3-input" required="required"> -->
 <label class="w3-label">email</label>
 </div>
 
@@ -29,7 +31,8 @@
 
 <input type="submit" value="login" class="w3-btn w3-light-grey">
 
-</form>
+
+</form:form>
 
 </body>
 </html>
