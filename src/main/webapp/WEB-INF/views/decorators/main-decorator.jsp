@@ -18,6 +18,7 @@
 <c:url value="/login" var="login"/>
 <c:url value="/logout" var="logout"/>
 <c:url value="/regist" var="regist"/>
+<c:url value="/seotda" var="seotda"/>
 
 <!-- Header -->
 <nav class="w3-topnav w3-margin w3-light-grey">
@@ -25,7 +26,7 @@
 
 	<a href="#">회사소개</a>
 	<a href="#">게시판</a>
-	<a href="#">Menu1</a>
+	<a href="${seotda}">섯다</a>
 	<a href="#">Menu2</a>
 	<a href="#">Menu3</a>
 	<c:choose>

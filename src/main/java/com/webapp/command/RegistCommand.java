@@ -7,7 +7,7 @@ public class RegistCommand {
 	String email;
 	
 	String password;
-	String password_check;
+	String passwordcheck;
 	
 	String name;
 	String phone;
@@ -27,11 +27,11 @@ public class RegistCommand {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getPassword_check() {
-		return password_check;
+	public String getPasswordcheck() {
+		return passwordcheck;
 	}
-	public void setPassword_check(String password_check) {
-		this.password_check = password_check;
+	public void setPasswordcheck(String passwordcheck) {
+		this.passwordcheck = passwordcheck;
 	}
 	public String getName() {
 		return name;

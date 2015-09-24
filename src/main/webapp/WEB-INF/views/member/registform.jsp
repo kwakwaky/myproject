@@ -24,21 +24,36 @@
 $(function() {
 
 	$("#email").blur(function(){
-	    var id = $('#email').val();
+	    var email = $('#email').val();
+	    
 	    $.ajax({
-	    type: "POST",
-	    url: "ajax/member", //이페이지에서 중복체크를 한다
-	    data: "id="+ id ,//test.asp에 id 값을 보낸다
-	    cache: false,
-	    success: function(data){
-	        $("#loadtext").html(data); //해당 내용을 보여준다
-	    }
+	    	type: "POST",
+	   		url: "ajax/email", //이페이지에서 중복체크를 한다
+	    	data: "email=" + email,
+	   		cache: false,
+	    	success: function(data){
+	       		$("#emailtext").html(data); //해당 내용을 보여준다
+	    	}
 	    });
 	});
+	
+	$("#passwordcheck").blur(function(){
+	    var password = 'password=' + $('#password').val();
+	    var passwordcheck = 'passwordcheck=' + $('#passwordcheck').val();
+	    $.post(
+		    "ajax/password",
+		    password,
+		    passwordcheck,
+		    function(data) {
+		    	$("#passwordtext").html(data);
+		});
+	   
+	});
+	
+	 
+	
 
 });
-
-
 
 
 
@@ -49,12 +64,13 @@ $(function() {
 
 <form:form commandName="regist" action="regist" method="post" cssClass="w3-container w3-center">
 
-	<div id="loadtext"></div>
+	
 	<!-- email -->
 	<div class="w3-group">
 		<form:input path="email" cssClass="w3-input" required="required"/>
 		<label class="w3-label">email</label>
 	</div>
+	<div id="emailtext"></div>
 	
 	<!-- password -->
 	<div class="w3-group">
@@ -64,9 +80,10 @@ $(function() {
 	
 	<!-- passwordCheck -->
 	<div class="w3-group">
-		<form:password path="password_check" cssClass="w3-input" required="required"/>
+		<form:password path="passwordcheck" cssClass="w3-input" required="required"/>
 		<label class="w3-label">passwordCheck</label>
 	</div>
+	<div id="passwordtext"></div>
 	
 	<!-- name -->
 	<div class="w3-group">

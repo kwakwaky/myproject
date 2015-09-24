@@ -6,6 +6,7 @@
     <path>/index.jsp</path>
     <path>/login</path>
     <path>/regist</path>
+    <path>/seotda</path>
     <decorator>/WEB-INF/views/decorators/main-decorator.jsp</decorator>
   </mapping>
 
