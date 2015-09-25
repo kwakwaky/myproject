@@ -9,7 +9,17 @@
 <title><sitemesh:write property="title"/></title>
 <sitemesh:write property="head"/>
 <style type="text/css">
-	
+	#testani {
+	    transition-property: width, color;
+	    transition-duration: 1s;
+	    transition-timing-function: ease;
+	    transition-delay: 3s;
+	 
+/* 	    -webkit-transition-property: width, color; */
+/* 	    -webkit-transition-duration: 1s; */
+/* 	    -webkit-transition-timing-function: ease; */
+/* 	    -webkit-transition-delay: 3s; */
+	}
 </style>
 </head>
 
@@ -22,7 +32,7 @@
 
 <!-- Header -->
 <nav class="w3-topnav w3-margin w3-light-grey">
-	<h1><a href="/myproject/"><strong>Mens Health</strong></a></h1>
+	<h1 id="testani"><a href="/myproject/"><strong>Mens Health</strong></a></h1>
 
 	<a href="#">회사소개</a>
 	<a href="#">게시판</a>

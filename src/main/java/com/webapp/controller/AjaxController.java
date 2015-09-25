@@ -25,6 +25,7 @@ public class AjaxController {
 	
 	Gson gson = new Gson();
 	Member member;
+	PrintWriter writer;
 	
 	@Autowired
 	MemberMapper mapper;
@@ -35,7 +36,7 @@ public class AjaxController {
 	@RequestMapping(value="/email", method=RequestMethod.POST)
 	public void emailValidate(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		response.setContentType("application/json; charset=utf-8");
-		PrintWriter writer = response.getWriter();
+		writer = response.getWriter();
 		log.info("test()...");
 		
 		// $.ajax에서 email을 받아옴
@@ -53,10 +54,11 @@ public class AjaxController {
 		writer.close();
 	}
 	
+	// password 검증
 	@RequestMapping(value="/password", method=RequestMethod.POST)
 	public void passwordValidate(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		response.setContentType("application/json; charset=utf-8");
-		PrintWriter writer = response.getWriter();
+		writer = response.getWriter();
 		
 		String password = request.getParameter("password");
 		String passwordcheck = request.getParameter("passwordcheck");
@@ -68,7 +70,38 @@ public class AjaxController {
 		}
 		
 		log.info("passwordValidate()..." + password + "," + passwordcheck);
+		writer.close();
 	}
 	
+	// name 검증
+	@RequestMapping(value="/name", method=RequestMethod.POST)
+	public void nameValidate(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		response.setContentType("application/json; charset=utf-8");
+		writer = response.getWriter();
+		
+		String name = request.getParameter("name");
+		
+		if (name.length() > 13) {
+			writer.println(gson.toJson("이름은 13자 이하만 가능합니다."));
+		} else {
+			writer.println(gson.toJson("사용가능한 이름"));
+		}
+		
+		log.info("nameValidate()...");
+		writer.close();
+	}
 	
+	// phone 검증
+	@RequestMapping(value="/phone", method=RequestMethod.POST)
+	public void phoneValidate(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		response.setContentType("application/json; charset=utf-8");
+		writer = response.getWriter();
+		
+//		String phone = request.getParameter("phone");
+		
+		
+		
+		log.info("phoneValidate()...");
+		writer.close();
+	}
 }
