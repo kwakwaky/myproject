@@ -4,7 +4,10 @@ import com.webapp.model.Member;
 
 public interface MemberMapper {
 	
-	// email을 받아서 Member객체를 return
+	// 멤버 로그인 할때 씀
 	Member selectByEmail(String email);
+	
+	// 멤버 가입 할때 씀
+	int insertMember(Member member);
 	
 }

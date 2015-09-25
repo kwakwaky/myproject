@@ -8,6 +8,34 @@
 	  from test_member
 	 where email = #{email}
 </select>
+
+<!-- insertMember -->
+<insert id="insertMember" parameterType="com.webapp.model.Member">
+	insert into test_member
+	(
+		num,
+		email,
+		password,
+		name,
+		phone,
+		gender,
+		birth,
+		choice,
+		enter
+	)
+	values
+	(
+		10,
+		#{email},
+		#{password},
+		#{name},
+		#{phone},
+		#{gender},
+		#{birth},
+		#{choice},
+		sysdate
+	)
+</insert>
   
   
 </mapper>

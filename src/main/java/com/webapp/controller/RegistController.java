@@ -45,7 +45,13 @@ public class RegistController {
 	public String regist(@ModelAttribute("regist") RegistCommand command) {
 		log.info("regist()...");
 		
-		
+//		try {
+//			service.register(command.getMember());
+//		} catch (Exception e) {
+//			log.error("regist() 요기서 에러남", e);
+//			errors.reject("duplicate"); // reject는 글로벌 에러
+//			return "member/registForm";
+//		}
 		
 		
 		return "redirect:/";

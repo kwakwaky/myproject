@@ -39,4 +39,9 @@
 	<property name="mapper" ref="memberMapper"/>
 </bean>
 
+<!-- memberRegistService -->
+<bean id="memberRegistService" class="com.webapp.service.MemberRegistService">
+	<property name="memberMapper" ref="memberMapper"/>
+</bean>
+
 </beans>
