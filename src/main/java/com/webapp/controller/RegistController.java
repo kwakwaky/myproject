@@ -9,18 +9,23 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.webapp.command.RegistCommand;
+import com.webapp.service.MemberRegistService;
 
 @Controller
 @RequestMapping("/regist")
 public class RegistController {
 	
 	static Log log = LogFactory.getLog(RegistController.class);
+	
+	@Autowired
+	MemberRegistService service;
 	
 	// gender의 라디오버튼을 위한 map을 return
 	@ModelAttribute("genderlist")
@@ -45,13 +50,17 @@ public class RegistController {
 	public String regist(@ModelAttribute("regist") RegistCommand command) {
 		log.info("regist()...");
 		
-//		try {
-//			service.register(command.getMember());
-//		} catch (Exception e) {
-//			log.error("regist() 요기서 에러남", e);
+		try {
+			
+			log.info("gender = " + command.getGender());
+			log.info("choice = " + command.getChoice());
+			service.register(command.getMember());
+		} catch (Exception e) {
+			log.error("regist() 요기서 에러남", e);
+			e.getStackTrace();
 //			errors.reject("duplicate"); // reject는 글로벌 에러
-//			return "member/registForm";
-//		}
+			return "member/registForm";
+		}
 		
 		
 		return "redirect:/";

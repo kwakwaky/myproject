@@ -17,11 +17,14 @@ public class MemberRegistService {
 	}
 	
 	public void register(Member member) {
-		try {
-			memberMapper.insertMember(member);
-		} catch (Exception e) {
-			log.info("회원가입 에러... , " + e);
-		}
+		memberMapper.insertMember(member);
+//		try {
+//			memberMapper.insertMember(member);
+//		} catch (Exception e) {
+//			e.getStackTrace();
+//			
+//			log.info("회원가입 에러... , " + e);
+//		}
 		
 	}
 

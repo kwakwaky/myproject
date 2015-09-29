@@ -18,21 +18,37 @@
 		password,
 		name,
 		phone,
+
+	<if test="gender != null"> <!-- null값을 허용하는 경우 이렇게 해줘야됨 -->
 		gender,
+	</if>
+
 		birth,
+
+	<if test="choice != null">
 		choice,
+	</if>
+
 		enter
 	)
 	values
 	(
-		10,
+		20,
 		#{email},
 		#{password},
 		#{name},
 		#{phone},
+
+	<if test="gender != null">
 		#{gender},
+	</if>
+
 		#{birth},
+
+	<if test="choice != null">
 		#{choice},
+	</if>
+
 		sysdate
 	)
 </insert>

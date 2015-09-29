@@ -156,7 +156,7 @@ $(function() {
 	
 	<!-- choice -->
 	<div class="w3-group">
-		<form:input path="choice" cssClass="w3-input" required="required"/>
+		<form:input path="choice" cssClass="w3-input"/>
 		<label class="w3-label">Choice</label>
 	</div>
 

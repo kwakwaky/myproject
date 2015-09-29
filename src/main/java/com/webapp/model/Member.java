@@ -11,7 +11,7 @@ public class Member {
 	private String phone;
 	private String gender;
 	private String birth;
-	private String chice;
+	private String choice;
 	private Date enter;
 	
 	public String getEmail() {
@@ -50,11 +50,11 @@ public class Member {
 	public void setBirth(String birth) {
 		this.birth = birth;
 	}
-	public String getChice() {
-		return chice;
+	public String getChoice() {
+		return choice;
 	}
-	public void setChice(String chice) {
-		this.chice = chice;
+	public void setChoice(String choice) {
+		this.choice = choice;
 	}
 	public Date getEnter() {
 		return enter;
