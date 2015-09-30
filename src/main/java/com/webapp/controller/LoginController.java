@@ -20,7 +20,6 @@ import com.webapp.service.AuthService;
 @RequestMapping("/login")
 public class LoginController {
 	
-	
 	@Autowired
 	AuthService service;
 	

@@ -15,8 +15,6 @@
 	div[id$='errors'] {
 		color: red;
 	}
-	
-	
 </style>
 </head>
 <body>

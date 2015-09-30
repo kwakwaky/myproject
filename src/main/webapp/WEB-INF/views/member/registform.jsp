@@ -8,7 +8,6 @@
 
 <link rel="stylesheet" href="resources/w3.css">
 <link rel="stylesheet" href="resources/js/jquery-ui-1.11.4/jquery-ui.css">
-
 <script type="text/javascript" src="resources/js/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
 <script type="text/javascript" src="resources/js/jquery-ui-1.11.4/jquery-ui.js"></script>
 

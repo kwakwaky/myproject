@@ -19,6 +19,7 @@ public class AuthService {
 	
 	// 로그인 처리해주는 메서드
 	public Member authenticate(String email, String password) {
+		log.info("authenticate()...");
 		Member info = new Member();
 		try {
 			Member m = mapper.selectByEmail(email);	

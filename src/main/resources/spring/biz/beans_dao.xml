@@ -6,12 +6,12 @@
 <!-- DataSource : oracle 프로필 -->
 <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 	<property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
-<!-- 	<property name="url" 			 value="jdbc:oracle:thin:@211.183.2.161:1521:xe"/> -->
-<!-- 	<property name="username" 		 value="pro"/> -->
-<!-- 	<property name="password" 		 value="1234"/> -->
-	<property name="url" 			 value="jdbc:oracle:thin:@localhost:1521:xe"/>
-	<property name="username" 		 value="system"/>
-	<property name="password" 		 value="sys1234"/>
+	<property name="url" 			 value="jdbc:oracle:thin:@211.183.2.161:1521:xe"/>
+	<property name="username" 		 value="pro"/>
+	<property name="password" 		 value="1234"/>
+<!-- 	<property name="url" 			 value="jdbc:oracle:thin:@localhost:1521:xe"/> -->
+<!-- 	<property name="username" 		 value="system"/> -->
+<!-- 	<property name="password" 		 value="sys1234"/> -->
 	<property name="maxActive" value="10"/>
 </bean>
 

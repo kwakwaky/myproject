@@ -18,17 +18,13 @@
 		password,
 		name,
 		phone,
-
 	<if test="gender != null"> <!-- null값을 허용하는 경우 이렇게 해줘야됨 -->
 		gender,
 	</if>
-
 		birth,
-
 	<if test="choice != null">
 		choice,
 	</if>
-
 		enter
 	)
 	values
@@ -38,20 +34,35 @@
 		#{password},
 		#{name},
 		#{phone},
-
 	<if test="gender != null">
 		#{gender},
 	</if>
-
 		#{birth},
-
 	<if test="choice != null">
 		#{choice},
 	</if>
-
 		sysdate
 	)
 </insert>
-  
+
+<update id="updateMember" parameterType="com.webapp.model.Member">
+    update test_member
+	<set> 
+		<if test="email != null">
+			email 		= #{email},
+		</if>
+		<if test="password != null">
+			password 	= #{password},
+		</if>
+		<if test="name != null">
+			name 		= #{name},
+		</if>
+		<if test="regdate != null">
+			regdate 	= #{regdate},
+		</if>
+	</set>
+	where id		= #{id}
+	  and email		= #{email}
+</update>
   
 </mapper>
