@@ -96,7 +96,8 @@ $(function() {
 <c:url value="/login" var="login"/>
 <c:url value="/logout" var="logout"/>
 <c:url value="/regist" var="regist"/>
-<c:url value="/info" var="info"/>
+<c:url value="/infoupdate" var="infoupdate"/>
+<c:url value="/unregist" var="unregist"/>
 <c:url value="/seotda" var="seotda"/>
 
 <!-- Header -->
@@ -115,8 +116,8 @@ $(function() {
 			<li class="w3-right"><a href="${logout}">Logout</a></li>
 			<li class="w3-right"><a href="#">${auth.name}</a>
 				<ul>
-					<li><a href="${info}">정보 조회/변경</a></li>
-					<li><a href="#">회원 탈퇴</a></li>
+					<li><a href="${infoupdate}">정보 조회/변경</a></li>
+					<li><a href="${unregist}">회원 탈퇴</a></li>
 				</ul>
 			</li>
 		</c:when>

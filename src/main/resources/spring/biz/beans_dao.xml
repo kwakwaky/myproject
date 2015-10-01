@@ -47,4 +47,9 @@
 	<property name="memberMapper" ref="memberMapper"/>
 </bean>
 
+<!-- memberUpdateService -->
+<bean id="memberUpdateService" class="com.webapp.service.MemberUpdateService">
+    <property name="memberMapper" ref="memberMapper"/>
+</bean>
+
 </beans>

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>infoupdateform.jsp</title>
 <link rel="stylesheet" href="resources/w3.css">
 <link rel="stylesheet" href="resources/js/jquery-ui-1.11.4/jquery-ui.css">
 <script type="text/javascript" src="resources/js/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
@@ -110,7 +110,7 @@ $(document).ready(function() {
 <body>
 <h1>Update Form</h1>
 
-<form:form commandName="update" action="update" method="post">
+<form:form commandName="update" action="infoupdate" method="post">
 <table id="info">
 	
 	<tr><!-- Email -->

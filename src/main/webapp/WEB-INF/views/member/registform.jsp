@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>registform.jsp</title>
 
 <link rel="stylesheet" href="resources/w3.css">
 <link rel="stylesheet" href="resources/js/jquery-ui-1.11.4/jquery-ui.css">

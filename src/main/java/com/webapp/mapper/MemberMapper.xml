@@ -57,12 +57,31 @@
 		<if test="name != null">
 			name 		= #{name},
 		</if>
-		<if test="regdate != null">
-			regdate 	= #{regdate},
+		<if test="phone != null">
+			phone 	= #{phone},
+		</if>
+		<if test="gender != null">
+			gender 	= #{gender},
+		</if>
+		<if test="birth != null">
+			birth 	= #{birth},
+		</if>
+		<if test="choice != null">
+			choice 	= #{choice},
 		</if>
 	</set>
-	where id		= #{id}
-	  and email		= #{email}
+	 	where num = #{num}
 </update>
-  
+
+<delete id="deleteByNum" parameterType="int">
+     delete from test_member
+	 where num = #{num}
+</delete>
+
+<select id="selectPasswordByNum" parameterType="int" resultType="string">
+    select password
+    from test_member
+    where num = #{num}
+</select>
+
 </mapper>

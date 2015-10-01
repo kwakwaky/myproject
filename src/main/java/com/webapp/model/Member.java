@@ -5,6 +5,7 @@ import java.util.Date;
 public class Member {
 	// model class의 변수는 private해줘야함 (보안)
 	
+	private int num;
 	private String email;
 	private String password;
 	private String name;
@@ -14,6 +15,12 @@ public class Member {
 	private String choice;
 	private Date enter;
 	
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
+	}
 	public String getEmail() {
 		return email;
 	}

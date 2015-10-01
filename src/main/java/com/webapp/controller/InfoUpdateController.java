@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.webapp.command.RegistCommand;
 import com.webapp.mapper.MemberMapper;
+import com.webapp.model.AuthInfo;
 import com.webapp.model.Member;
+import com.webapp.service.MemberUpdateService;
 
 @Controller
 public class InfoUpdateController {
@@ -24,9 +26,13 @@ public class InfoUpdateController {
 	static Log log = LogFactory.getLog(InfoUpdateController.class);
 	
 	Member member;
+	AuthInfo authInfo;
 	
 	@Autowired
 	MemberMapper mapper;
+	
+	@Autowired
+	MemberUpdateService service;
 	
 	// gender의 라디오버튼을 위한 map을 return
 	@ModelAttribute("genderlist")
@@ -39,28 +45,31 @@ public class InfoUpdateController {
 		return map;
 	}
 	
-	@RequestMapping(value="/info", method=RequestMethod.GET)
-	public String info(Model model, HttpSession session) {
-		log.info("info()..." + ((Member)session.getAttribute("auth")).getEmail());
+	@RequestMapping(value="/infoupdate", method=RequestMethod.GET)
+	public String info(@ModelAttribute("update") RegistCommand command, Model model, HttpSession session) {
+		log.info("info()..." + ((AuthInfo)session.getAttribute("auth")).getEmail());
 		
-		member = (Member) session.getAttribute("auth");
-		member = mapper.selectByEmail(member.getEmail());
+		authInfo = (AuthInfo) session.getAttribute("auth");
+		member = mapper.selectByEmail(authInfo.getEmail());
 		model.addAttribute(member);
 		
-		return "member/info";
+		return "member/infoupdateform";
 	}
 	
-	@RequestMapping(value="/update", method=RequestMethod.GET)
-	public String updateForm(@ModelAttribute("update") RegistCommand command, Model model) {
-		log.info("updateForm()..." + member.getEmail());
-		model.addAttribute(member);
-		
-		return "member/updateform";
-	}
+//	@RequestMapping(value="/update", method=RequestMethod.GET)
+//	public String updateForm(@ModelAttribute("update") RegistCommand command, Model model) {
+//		log.info("updateForm()..." + member.getEmail());
+//		model.addAttribute(member);
+//		
+//		return "member/updateform";
+//	}
 	
-	@RequestMapping(value="/update", method=RequestMethod.POST)
-	public String update(@ModelAttribute("update") RegistCommand command) {
+	@RequestMapping(value="/infoupdate", method=RequestMethod.POST)
+	public String update(@ModelAttribute("update") RegistCommand command, HttpSession session) {
 		log.info("updateForm()..." + member.getEmail());
+		int num = ((AuthInfo)session.getAttribute("auth")).getNum();
+		log.info("num = " + num);
+		service.update(command, num);
 		
 		
 		return "redirect:/";

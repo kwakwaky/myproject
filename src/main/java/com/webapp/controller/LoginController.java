@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.webapp.command.LoginCommand;
 import com.webapp.exception.IdPasswordNotMatchException;
-import com.webapp.model.Member;
+import com.webapp.model.AuthInfo;
 import com.webapp.service.AuthService;
 
 @Controller
@@ -40,7 +40,7 @@ public class LoginController {
 //		log.info("login()..." + member.toString());
 		log.info(command.getEmail() + " , " + command.getPassword());
 		try {
-			Member auth = service.authenticate(command.getEmail(), command.getPassword());
+			AuthInfo auth = service.authenticate(command.getEmail(), command.getPassword());
 			log.info(command.getEmail() + " , " + command.getPassword());
 			session.setAttribute("auth", auth); // 성공하면 세션에 auth를 저장
 			log.info(auth.getName());

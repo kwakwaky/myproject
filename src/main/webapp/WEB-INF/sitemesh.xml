@@ -3,12 +3,14 @@
 <sitemesh>
 
   <mapping>
-    <path>/index.jsp</path>
-    <path>/login</path>
-    <path>/regist</path>
-    <path>/info</path>
-    <path>/update</path>
-    <path>/seotda</path>
+    <path>/*</path>
+<!--     <path>/index.jsp</path> -->
+<!--     <path>/login</path> -->
+<!--     <path>/regist</path> -->
+<!--     <path>/infoupdate</path> -->
+<!--     <path>/unregist</path> -->
+<!--     <path>/seotda</path> -->
+    
     <decorator>/WEB-INF/views/decorators/main-decorator.jsp</decorator>
   </mapping>
 
